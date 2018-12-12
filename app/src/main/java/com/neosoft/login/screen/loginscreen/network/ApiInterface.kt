@@ -1,8 +1,7 @@
 package com.neosoft.login.screen.loginscreen.network
 
-import com.neosoft.login.screen.loginscreen.BASE_URL
+import com.neosoft.login.screen.loginscreen.utils.BASE_URL
 import com.neosoft.login.screen.loginscreen.responses.LoginResponse
-import okhttp3.Call
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -11,7 +10,7 @@ import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.POST
 
-interface ApiService{
+interface ApiService {
 
     companion object {
 

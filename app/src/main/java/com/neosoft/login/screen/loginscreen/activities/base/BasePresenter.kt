@@ -4,8 +4,9 @@ import com.neosoft.login.screen.loginscreen.network.ApiService
 
 open class BasePresenter<V>{
 
-    protected val apiClient = ApiService.create()
     var view: V? = null
+    protected var apiClient = ApiService.create()
+
 
     fun attachView(view: V) {
         this.view=view

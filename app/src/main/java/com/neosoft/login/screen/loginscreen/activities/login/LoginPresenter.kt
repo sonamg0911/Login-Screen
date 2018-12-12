@@ -11,18 +11,20 @@ class LoginPresenter:BasePresenter<LoginContract.View>(),LoginContract.Presenter
         apiClient.login(email,password).enqueue(object: retrofit2.Callback<LoginResponse>{
 
             override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
-                view?.showLoading(false)
+                view?.hideLoading()
                 view?.showMessage("onFailureCalled")
             }
 
             override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
-                view?.showLoading(false)
+                view?.showLoading()
                 if(response.isSuccessful){
                     view?.showMessage(response.body()?.userMsg!!)
+                    view?.onSuccess(response.body()!!)
                 }
-                else view?.showMessage("response unsuccessful")
+                else view?.onFailure()
 
             }
         })
+
     }
 }
