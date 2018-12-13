@@ -1,13 +1,16 @@
 package com.neosoft.login.screen.loginscreen.activities.base
 
+import android.databinding.DataBindingUtil
+import android.databinding.ViewDataBinding
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.EditText
 import android.widget.Toast
 
-abstract class BaseActivity:AppCompatActivity(),BaseContract.View{
+abstract class BaseActivity<V : ViewDataBinding>:AppCompatActivity(),BaseContract.View{
 
     private var basePresenter = BasePresenter<BaseContract.View>()
+    protected lateinit var binding:V
 
     override fun showMessage(message: String) {
         Toast.makeText(this,message,Toast.LENGTH_LONG).show()
@@ -23,7 +26,7 @@ abstract class BaseActivity:AppCompatActivity(),BaseContract.View{
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(getContentLayout())
+        binding=DataBindingUtil.setContentView(this,getContentLayout())
         intentData()
         initViews()
         listeners()

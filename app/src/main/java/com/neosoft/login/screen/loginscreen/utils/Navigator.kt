@@ -18,12 +18,7 @@ class Navigator private constructor(){
     lateinit var intent: Intent
 
     fun navigateToHome(context: Context,data:LoginData){
-        intent=Intent(context, HomeActivity::class.java)
-        intent.putExtra(FIRST_NAME,data.firstName)
-        intent.putExtra(LAST_NAME,data.lastName)
-        intent.putExtra(EMAIL,data.email)
-        intent.putExtra(PHONENO,data.phoneNo)
-        context.startActivity(intent)
+
     }
 
 

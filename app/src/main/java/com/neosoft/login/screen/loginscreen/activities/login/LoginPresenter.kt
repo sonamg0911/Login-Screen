@@ -8,6 +8,7 @@ import retrofit2.Response
 class LoginPresenter:BasePresenter<LoginContract.View>(),LoginContract.Presenter{
 
     override fun doLogin(email:String,password:String) {
+        view?.showLoading()
         apiClient.login(email,password).enqueue(object: retrofit2.Callback<LoginResponse>{
 
             override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
@@ -16,7 +17,7 @@ class LoginPresenter:BasePresenter<LoginContract.View>(),LoginContract.Presenter
             }
 
             override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
-                view?.showLoading()
+                view?.hideLoading()
                 if(response.isSuccessful){
                     view?.showMessage(response.body()?.userMsg!!)
                     view?.onSuccess(response.body()!!)
