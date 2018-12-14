@@ -52,10 +52,8 @@ class LoginBindingModel:BaseObservable(){
     @get:Bindable var password: String by Delegates.observable("") { prop, old, new ->
             notifyPropertyChanged(BR.password) }
 
-    @get:Bindable var loading: String by Delegates.observable("") { prop, old, new ->
+    @get:Bindable var loading:Boolean by Delegates.observable(false) { prop, old, new ->
         notifyPropertyChanged(BR.loading)
     }
-
-
 
 }

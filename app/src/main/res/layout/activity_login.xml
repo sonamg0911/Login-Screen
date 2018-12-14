@@ -5,6 +5,7 @@
     tools:context=".activities.login.LoginActivity">
 
     <data>
+        <import type="android.view.View"/>
         <variable
             name="model"
             type="com.neosoft.login.screen.loginscreen.activities.login.LoginBindingModel"/>
@@ -98,7 +99,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:background="@android:drawable/screen_background_dark_transparent">
+            android:background="@android:drawable/screen_background_dark_transparent"
+            android:visibility="@{model.loading ? View.VISIBLE : View.GONE }">
 
             <ProgressBar
                 android:id="@+id/login_progress_bar"

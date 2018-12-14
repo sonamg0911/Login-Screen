@@ -15,11 +15,11 @@ import com.neosoft.login.screen.loginscreen.utils.Utils
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>(), LoginContract.View {
     override fun showLoading() {
-        binding.model?.setLoading(true)
+        binding.model?.loading = true
     }
 
     override fun hideLoading() {
-        binding.model?.setLoading(false)
+        binding.model?.loading = false
     }
 
     override fun onSuccess(response: LoginResponse) {
