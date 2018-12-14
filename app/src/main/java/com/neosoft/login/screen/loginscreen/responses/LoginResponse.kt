@@ -7,7 +7,7 @@ data class LoginResponse(
 
         @SerializedName("status")
         @Expose
-        var status:String,
+        var status:Int,
 
         @SerializedName("data")
         @Expose

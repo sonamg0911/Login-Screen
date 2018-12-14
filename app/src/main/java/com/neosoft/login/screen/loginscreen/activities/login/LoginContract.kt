@@ -8,8 +8,8 @@ interface LoginContract:BaseContract{
     interface View:BaseContract.View{
         fun showLoading()
         fun hideLoading()
-        fun onSuccess(response: LoginResponse)
-        fun onFailure()
+        fun onLoginSuccess(response: LoginResponse)
+        fun onLoginFailure()
     }
 
     interface Presenter{

@@ -1,30 +1,37 @@
 package com.neosoft.login.screen.loginscreen.activities.login
 
 import com.neosoft.login.screen.loginscreen.activities.base.BasePresenter
+import com.neosoft.login.screen.loginscreen.network.ApiManager
 import com.neosoft.login.screen.loginscreen.responses.LoginResponse
-import retrofit2.Call
-import retrofit2.Response
+import io.reactivex.Observer
+import io.reactivex.disposables.Disposable
+import io.reactivex.observers.DisposableObserver
+import io.reactivex.observers.DisposableSingleObserver
 
 class LoginPresenter:BasePresenter<LoginContract.View>(),LoginContract.Presenter{
 
     override fun doLogin(email:String,password:String) {
         view?.showLoading()
-        apiClient.login(email,password).enqueue(object: retrofit2.Callback<LoginResponse>{
+        ApiManager.getInstance()
+                .doLogin(email,password)
+                .subscribe(object : Observer<LoginResponse>{
+                    override fun onSubscribe(d: Disposable) {}
 
-            override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
-                view?.hideLoading()
-                view?.showMessage("onFailureCalled")
-            }
+                    override fun onComplete() {}
 
-            override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
-                view?.hideLoading()
-                if(response.isSuccessful){
-                    view?.showMessage(response.body()?.userMsg!!)
-                    view?.onSuccess(response.body()!!)
-                }
-                else view?.onFailure()
+                    override fun onNext(response : LoginResponse) {
+                        view?.hideLoading()
+                        if(response.status == 200){
+                            view?.onLoginSuccess(response)
+                        }
+                        else view?.onLoginFailure()
+                    }
 
-            }
+                    override fun onError(e: Throwable) {
+                        view?.hideLoading()
+                        view?.showMessage("onFailureCalled")
+                    }
+
         })
 
     }

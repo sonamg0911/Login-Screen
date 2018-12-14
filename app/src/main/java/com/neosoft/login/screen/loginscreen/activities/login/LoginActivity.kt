@@ -2,7 +2,6 @@ package com.neosoft.login.screen.loginscreen.activities.login
 
 import android.os.Bundle
 import android.text.TextUtils
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
@@ -22,11 +21,11 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(), LoginContract.View {
         binding.model?.loading = false
     }
 
-    override fun onSuccess(response: LoginResponse) {
-        showMessage(response.message)
+    override fun onLoginSuccess(response: LoginResponse) {
+        showMessage(response.userMsg)
     }
 
-    override fun onFailure() {
+    override fun onLoginFailure() {
         showMessage("Response Unsuccessful")
     }
 
