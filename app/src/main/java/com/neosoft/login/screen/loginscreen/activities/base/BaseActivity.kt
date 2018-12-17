@@ -33,6 +33,7 @@ abstract class BaseActivity<V : ViewDataBinding>:AppCompatActivity(),BaseContrac
     }
 
     override fun onDestroy() {
+        basePresenter.disposeSubscription()
         basePresenter.detachView()
         super.onDestroy()
     }

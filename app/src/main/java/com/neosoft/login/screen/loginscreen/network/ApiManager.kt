@@ -18,7 +18,7 @@ class ApiManager private constructor(){
         }
     }
 
-    fun doLogin(email:String,password:String):Observable<LoginResponse>{
+    fun getLoginObservable(email:String, password:String):Observable<LoginResponse>{
 
         return apiClient.login(email,password)
                 .subscribeOn(Schedulers.io())
