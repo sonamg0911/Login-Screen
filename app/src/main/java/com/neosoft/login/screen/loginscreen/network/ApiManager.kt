@@ -13,6 +13,8 @@ class ApiManager private constructor(){
 
         private val apiManager:ApiManager = ApiManager()
 
+
+        @Synchronized
         fun getInstance():ApiManager{
             return apiManager
         }

@@ -1,7 +1,6 @@
 package com.neosoft.login.screen.loginscreen.activities.login
 
 import android.os.Bundle
-import android.text.TextUtils
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
@@ -13,6 +12,15 @@ import com.neosoft.login.screen.loginscreen.responses.LoginResponse
 import com.neosoft.login.screen.loginscreen.utils.Utils
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>(), LoginContract.View {
+
+    override fun showInvalidEmailFieldError() {showErrorForInvalidField(etEmail)}
+
+    override fun showInvalidPasswordFieldError() {showErrorForInvalidField(etPass)}
+
+    override fun showEmptyEmailFieldError() {showErrorForEmptyField(etEmail) }
+
+    override fun showEmptyPasswordFieldError() { showErrorForEmptyField(etPass)}
+
     override fun showLoading() {
         binding.model?.loading = true
     }
@@ -42,6 +50,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(), LoginContract.View {
         super.onCreate(savedInstanceState)
         presenter.attachView(this)
         binding.model = LoginBindingModel()
+        binding.activity = this
     }
 
     override fun initViews() {
@@ -64,26 +73,20 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(), LoginContract.View {
     override fun listeners() {
         btnLogin.setOnClickListener {
 
-            email = etEmail.text.toString().trim()
-            pass = etPass.text.toString().trim()
 
-            if ((TextUtils.isEmpty(email))) showErrorForEmptyField(etEmail)
-            else if ((TextUtils.isEmpty(pass))) showErrorForEmptyField(etPass)
-            else if (!Utils.getInstance().doEmailValidation(email))
-                showErrorForInvalidField(etEmail)
-            else if (!Utils.getInstance().doPasswordValidation(pass))
-                showErrorForInvalidField(etPass)
-            else {
-                if (Utils.getInstance().isInternetConnected(this)) {
-                    presenter.doLogin(email, pass)
-                } else {
-                    showMessage("No Internet Connection Available")
-                }
-
-            }
 
         }
 
+    }
+
+    fun onLoginClicked(){
+        email = etEmail.text.toString().trim()
+        pass = etPass.text.toString().trim()
+        if (Utils.getInstance().isInternetConnected(this)) {
+            presenter.doLogin(email, pass)
+        } else {
+            showMessage("No Internet Connection Available")
+        }
     }
 
 }

@@ -9,6 +9,10 @@
         <variable
             name="model"
             type="com.neosoft.login.screen.loginscreen.activities.login.LoginBindingModel"/>
+
+        <variable
+            name="activity"
+            type="com.neosoft.login.screen.loginscreen.activities.login.LoginActivity"/>
     </data>
 
     <android.support.constraint.ConstraintLayout
@@ -88,6 +92,7 @@
             android:text="@string/caps_login"
             android:textColor="@color/colorLavendar"
             android:textSize="25sp"
+            android:onClick="@{() -> activity.onLoginClicked()}"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/et_password"
