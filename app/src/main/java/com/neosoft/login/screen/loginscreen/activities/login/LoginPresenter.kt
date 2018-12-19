@@ -6,6 +6,7 @@ import com.neosoft.login.screen.loginscreen.activities.base.BaseObserver
 import com.neosoft.login.screen.loginscreen.activities.base.BasePresenter
 import com.neosoft.login.screen.loginscreen.network.ApiManager
 import com.neosoft.login.screen.loginscreen.responses.LoginResponse
+import com.neosoft.login.screen.loginscreen.utils.Navigator
 import com.neosoft.login.screen.loginscreen.utils.Utils
 import io.reactivex.Observable
 import io.reactivex.ObservableSource
@@ -57,6 +58,7 @@ class LoginPresenter:BasePresenter<LoginContract.View>(),LoginContract.Presenter
                             view?.hideLoading()
                             if (response.status == 200) {
                                 view?.onLoginSuccess(response)
+                                view?.navigateToHome(response.data)
                                 Thread(Runnable {
                                     view?.getUserDataDao()?.insertAll(response.data)
                                     return@Runnable}).start()

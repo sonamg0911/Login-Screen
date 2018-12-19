@@ -5,49 +5,70 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".activities.home.HomeActivity">
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:padding="30dp"
-    android:background="@color/colorLavendar">
+    <data>
+        <variable
+            name="model"
+            type="com.neosoft.login.screen.loginscreen.activities.home.HomeBindingModel"/>
+    </data>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:textSize="20sp"
-        android:textColor="@color/colorIndigo"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="30dp"
+            android:background="@color/colorLavendar">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:textSize="20sp"
-        android:textColor="@color/colorIndigo"/>
+            <TextView
+                android:id="@+id/tv_first_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:gravity="center"
+                android:text="@{model.firstName}"
+                android:textSize="20sp"
+                android:textColor="@color/colorIndigo"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:textSize="20sp"
-        android:textColor="@color/colorIndigo"/>
+            <TextView
+                android:id="@+id/tv_last_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:gravity="center"
+                android:text="@{model.lastName}"
+                android:textSize="20sp"
+                android:textColor="@color/colorIndigo"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:textSize="20sp"
-        android:textColor="@color/colorIndigo"/>
+            <TextView
+                android:id="@+id/tv_dob"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:gravity="center"
+                android:text="@{model.phoneNo}"
+                android:textSize="20sp"
+                android:textColor="@color/colorIndigo"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:textSize="20sp"
-        android:textColor="@color/colorIndigo"/>
+            <TextView
+                android:id="@+id/tv_phone_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:gravity="center"
+                android:text="@{model.modified}"
+                android:textSize="20sp"
+                android:textColor="@color/colorIndigo"/>
 
-</LinearLayout>
+            <TextView
+                android:id="@+id/tv_access_token"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:gravity="center"
+                android:text="@{model.accessToken}"
+                android:textSize="20sp"
+                android:textColor="@color/colorIndigo"/>
+
+        </LinearLayout>
 
 </layout>

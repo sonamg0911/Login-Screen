@@ -20,19 +20,19 @@ data class UserData(
 
         @SerializedName("first_name")
         @Expose
-        var firstName: String?,
+        var firstName: String,
 
         @SerializedName("last_name")
         @Expose
-        var lastName: String?,
+        var lastName: String,
 
         @SerializedName("email")
         @Expose
-        var email: String?,
+        var email: String,
 
         @SerializedName("username")
         @Expose
-        var username: String?,
+        var username: String,
 
         @SerializedName("profile_pic")
         @Expose
@@ -44,11 +44,11 @@ data class UserData(
 
         @SerializedName("gender")
         @Expose
-        var gender: String?,
+        var gender: String,
 
         @SerializedName("phone_no")
         @Expose
-        var phoneNo: String?,
+        var phoneNo: String,
 
         @SerializedName("dob")
         @Expose
@@ -60,15 +60,15 @@ data class UserData(
 
         @SerializedName("created")
         @Expose
-        var created: String?,
+        var created: String,
 
         @SerializedName("modified")
         @Expose
-        var modified: String?,
+        var modified: String,
 
         @SerializedName("access_token")
         @Expose
-        var accessToken: String?
+        var accessToken: String
 
 ){
     @Ignore

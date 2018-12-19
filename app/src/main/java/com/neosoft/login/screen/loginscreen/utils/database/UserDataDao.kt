@@ -1,19 +1,21 @@
 package com.neosoft.login.screen.loginscreen.utils.database
 
-import android.arch.persistence.room.Dao
-import android.arch.persistence.room.Delete
-import android.arch.persistence.room.Insert
-import android.arch.persistence.room.Query
+import android.arch.persistence.room.*
 import com.neosoft.login.screen.loginscreen.responses.UserData
+import io.reactivex.Flowable
+import io.reactivex.Single
 
 @Dao
 interface UserDataDao{
 
     @Query("SELECT * from userData")
-    fun getAllUserData():List<UserData>
+    fun getAllUserData():Flowable<List<UserData>>
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(userData: UserData)
+
+    @Query("SELECT * from userData where id=:userId")
+    fun getUserDataFromId(userId:Int): Flowable<UserData>
 
     @Delete
     fun delete(userData: UserData)

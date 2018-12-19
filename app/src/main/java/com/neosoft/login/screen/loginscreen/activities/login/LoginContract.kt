@@ -2,6 +2,7 @@ package com.neosoft.login.screen.loginscreen.activities.login
 
 import com.neosoft.login.screen.loginscreen.activities.base.BaseContract
 import com.neosoft.login.screen.loginscreen.responses.LoginResponse
+import com.neosoft.login.screen.loginscreen.responses.UserData
 
 interface LoginContract:BaseContract{
 
@@ -14,6 +15,7 @@ interface LoginContract:BaseContract{
         fun showInvalidPasswordFieldError()
         fun onLoginSuccess(response: LoginResponse)
         fun onLoginFailure()
+        fun navigateToHome(data: UserData)
     }
 
     interface Presenter{

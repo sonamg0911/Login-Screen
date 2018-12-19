@@ -6,7 +6,7 @@ import android.arch.persistence.room.RoomDatabase
 import android.content.Context
 import com.neosoft.login.screen.loginscreen.responses.UserData
 
-@Database(entities = [UserData::class],version = 1,exportSchema = false)
+@Database(entities = [UserData::class],version = 3,exportSchema = false)
 abstract class AppDatabase:RoomDatabase(){
 
     abstract fun userDataDao():UserDataDao
@@ -21,6 +21,7 @@ abstract class AppDatabase:RoomDatabase(){
                 synchronized(AppDatabase::class){
                     INSTANCE = Room
                             .databaseBuilder(context,AppDatabase::class.java,"data.db")
+                            .fallbackToDestructiveMigration()
                             .build()
                 }
             }
