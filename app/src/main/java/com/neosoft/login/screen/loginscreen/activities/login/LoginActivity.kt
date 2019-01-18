@@ -1,10 +1,6 @@
 package com.neosoft.login.screen.loginscreen.activities.login
 
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ProgressBar
-import android.widget.TextView
 import com.neosoft.login.screen.loginscreen.R
 import com.neosoft.login.screen.loginscreen.activities.base.BaseActivity
 import com.neosoft.login.screen.loginscreen.databinding.ActivityLoginBinding
