@@ -1,10 +1,12 @@
 package com.neosoft.login.screen.loginscreen.activities.login
 
 import android.text.TextUtils
+import android.util.Log
 import com.neosoft.login.screen.loginscreen.R
 import com.neosoft.login.screen.loginscreen.activities.base.BaseObserver
 import com.neosoft.login.screen.loginscreen.activities.base.BasePresenter
 import com.neosoft.login.screen.loginscreen.network.ApiManager
+import com.neosoft.login.screen.loginscreen.responses.CalendarListResponse
 import com.neosoft.login.screen.loginscreen.responses.LoginResponse
 import com.neosoft.login.screen.loginscreen.utils.Navigator
 import com.neosoft.login.screen.loginscreen.utils.Utils
@@ -17,6 +19,14 @@ import io.reactivex.schedulers.Schedulers
 import java.util.*
 
 class LoginPresenter:BasePresenter<LoginContract.View>(),LoginContract.Presenter{
+
+    override fun getCalendarList() {
+        ApiManager.getInstance().getCalendarListObservable().subscribe(object :BaseObserver<CalendarListResponse>(){
+            override fun onNext(response: CalendarListResponse) {
+                Log.d("onNextCalled",response.itemList[0].id)
+            }
+        })
+    }
 
     override fun validate(email: String, password: String):Boolean {
 

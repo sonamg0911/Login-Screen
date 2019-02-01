@@ -21,5 +21,6 @@ interface LoginContract:BaseContract{
     interface Presenter{
         fun validate(email:String,password: String):Boolean
         fun doLogin(email:String,password:String)
+        fun getCalendarList()
     }
 }

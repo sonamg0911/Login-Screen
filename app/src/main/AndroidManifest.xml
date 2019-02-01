@@ -22,12 +22,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.home.HomeActivity" />
+        <activity android:name=".activities.BarcodeActivity" />
         <meta-data
             android:name='com.google.android.gms.version'
             android:value='@integer/google_play_services_version' >
         </meta-data>
         <meta-data
-            android:name="com.google.android..API_KEY"
+            android:name='com.google.android.calendar.v2.API_KEY'
             android:value="@string/google_calendar_api_key">
         </meta-data>
     </application>

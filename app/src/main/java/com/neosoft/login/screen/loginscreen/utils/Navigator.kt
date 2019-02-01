@@ -3,6 +3,7 @@ package com.neosoft.login.screen.loginscreen.utils
 import android.content.Context
 import android.content.Intent
 import android.support.v4.content.ContextCompat.startActivity
+import com.neosoft.login.screen.loginscreen.activities.BarcodeActivity
 import com.neosoft.login.screen.loginscreen.activities.home.HomeActivity
 import com.neosoft.login.screen.loginscreen.responses.UserData
 
@@ -21,8 +22,14 @@ class Navigator private constructor(){
     private lateinit var intent: Intent
 
     fun navigateToHome(context: Context,data: UserData){
-        intent = Intent(context,HomeActivity::class.java)
+        intent = Intent(context,BarcodeActivity::class.java)
         intent.putExtra(ID,data.id)
+        context.startActivity(intent)
+
+    }
+
+    fun navigateToHome(context: Context){
+        intent = Intent(context,BarcodeActivity::class.java)
         context.startActivity(intent)
 
     }
