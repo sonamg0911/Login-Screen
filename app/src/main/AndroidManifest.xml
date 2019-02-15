@@ -4,7 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
 
     <application
         android:allowBackup="true"
@@ -23,14 +23,17 @@
         </activity>
         <activity android:name=".activities.home.HomeActivity" />
         <activity android:name=".activities.BarcodeActivity" />
+        <activity android:name=".activities.AddTaskActivity" />
+        <activity android:name=".activities.CustomerSearchActivity" />
+        <activity android:name=".activities.ReviewerModelActivity" />
+
         <meta-data
-            android:name='com.google.android.gms.version'
-            android:value='@integer/google_play_services_version' >
-        </meta-data>
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version"/>
         <meta-data
-            android:name='com.google.android.calendar.v2.API_KEY'
-            android:value="@string/google_calendar_api_key">
-        </meta-data>
+            android:name="com.google.android.calendar.v2.API_KEY"
+            android:value="@string/google_calendar_api_key"/>
+
     </application>
 
 </manifest>

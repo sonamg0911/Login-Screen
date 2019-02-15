@@ -3,5 +3,48 @@
     <string name="email">Email:</string>
     <string name="password">Password:</string>
     <string name="caps_login">LOGIN</string>
+    <string name="select_priority">Select Priority</string>
+    <string name="select_role">Select Role</string>
+    <string name="select_reviewer">Select Reviewer</string>
+    <string name="select_rm">Select RM</string>
+    <string name="select_status">Select Status</string>
+    <string name="filter_by_customer">Filter By Customer</string>
+    <string name="filter_by_product">Filter By Product</string>
     <string name="google_calendar_api_key">1026744718634-vav4f1j26b2e3hhrp1d7tiaknvh0e9ri.apps.googleusercontent.com</string>
+
+    <string-array name="priority_array">
+        <item>Low</item>
+        <item>Medium</item>
+        <item>High</item>
+    </string-array>
+
+    <string-array name="status_array">
+        <item>Started</item>
+        <item>Pending</item>
+        <item>Completed</item>
+    </string-array>
+
+    <string-array name="repeat_array">
+        <item>None</item>
+        <item>Once</item>
+        <item>Daily</item>
+        <item>Mon to Fri</item>
+        <item>Custom</item>
+    </string-array>
+
+    <string-array name="sample_array">
+        <item>Sample 1</item>
+        <item>Sample 2</item>
+        <item>Sample 3</item>
+        <item>Sample 4</item>
+    </string-array>
+
+    <string-array name="array_filter_by_customer">
+        <item>Filter By Customer</item>
+    </string-array>
+
+    <string-array name="array_filter_by_product">
+        <item>Filter By Product</item>
+    </string-array>
+
 </resources>

@@ -23,7 +23,7 @@
             android:id="@+id/rl_pending_service"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="6dp">
 
             <TextView
                 android:id="@+id/tv_pending_since"
@@ -31,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="15dp"
                 android:text="Pending Since"
-                android:textSize="15sp"
+                android:textSize="14sp"
                 android:textColor="@color/colorLightestGray"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"/>
@@ -44,7 +44,7 @@
                 android:paddingEnd="8dp"
                 android:background="@drawable/gray_rounded_corner"
                 android:text="5 DAYS"
-                android:textSize="15sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 android:textColor="@android:color/white"
                 android:layout_marginTop="6dp"
@@ -58,15 +58,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_margin="20dp"
+            android:layout_margin="15dp"
             android:padding="2dp">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="22sp"
+                android:textSize="20sp"
                 android:text="Nipun Sharma"
-                android:textStyle="bold"
                 android:textColor="@color/colorLightBlack" />
 
             <LinearLayout
@@ -78,18 +77,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:text="Barcode:"
-                    android:textSize="18sp"
-                    android:textColor="@color/colorLightGray"
-                    android:textStyle="bold"/>
+                    android:textSize="16sp"
+                    android:textColor="@color/colorLightGray" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:text="5386297"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:textColor="@color/colorDeepPink"
-                    android:layout_marginStart="6dp"
-                    android:textStyle="bold"/>
+                    android:layout_marginStart="6dp" />
 
             </LinearLayout>
 
@@ -119,20 +116,18 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:text="Account Number"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         android:layout_weight="1"
-                        android:textColor="@color/colorLightGray"
-                        android:textStyle="bold" />
+                        android:textColor="@color/colorLightGray" />
 
                     <TextView
                         android:id="@+id/tv_account_generation_date"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:text="Account Generation Date"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         android:layout_weight="1"
-                        android:textColor="@color/colorLightGray"
-                        android:textStyle="bold" />
+                        android:textColor="@color/colorLightGray" />
 
                 </LinearLayout>
 
@@ -150,21 +145,18 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:text="123456789"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         android:layout_weight="1"
-                        android:textColor="@color/colorLightBlack"
-                        android:textStyle="bold" />
+                        android:textColor="@color/colorLightBlack" />
 
                     <TextView
                         android:id="@+id/tv_account_generation_date_display"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:text="14/08/17"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         android:layout_weight="1"
-                        android:textColor="@color/colorLightBlack"
-                        android:textStyle="bold"
-                        />
+                        android:textColor="@color/colorLightBlack" />
 
                 </LinearLayout>
 

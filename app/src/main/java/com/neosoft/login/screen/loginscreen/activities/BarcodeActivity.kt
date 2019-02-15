@@ -27,8 +27,8 @@ class BarcodeActivity:BaseActivity<ActivityBarcodeBinding>(){
     }
 
     override fun initViews() {
-        barcodeTab=findViewById(R.id.tl_barcode_names)
-        barcodeViewPager=findViewById(R.id.vp_barcode)
+        barcodeTab=binding.tlBarcodeNames
+        barcodeViewPager=binding.vpBarcode
 
     }
 
