@@ -42,10 +42,10 @@ class LoginPresenter:BasePresenter<LoginContract.View>(),LoginContract.Presenter
             view?.showInvalidEmailFieldError()
             false
         }
-        else if (!Utils.getInstance().doPasswordValidation(password)) {
+        /*else if (!Utils.getInstance().doPasswordValidation(password)) {
             view?.showInvalidPasswordFieldError()
             false
-        }
+        }*/
         else {
             true
         }

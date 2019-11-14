@@ -26,6 +26,8 @@
         <activity android:name=".activities.AddTaskActivity" />
         <activity android:name=".activities.CustomerSearchActivity" />
         <activity android:name=".activities.ReviewerModelActivity" />
+        <activity android:name=".activities.SearchByDateActivity" />
+        <service android:name=".services.BadgeIntentService" android:exported="false"></service>
 
         <meta-data
             android:name="com.google.android.gms.version"

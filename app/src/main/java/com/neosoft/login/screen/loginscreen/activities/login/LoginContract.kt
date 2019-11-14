@@ -4,7 +4,7 @@ import com.neosoft.login.screen.loginscreen.activities.base.BaseContract
 import com.neosoft.login.screen.loginscreen.responses.LoginResponse
 import com.neosoft.login.screen.loginscreen.responses.UserData
 
-interface LoginContract:BaseContract{
+interface LoginContract{
 
     interface View:BaseContract.View{
         fun showLoading()

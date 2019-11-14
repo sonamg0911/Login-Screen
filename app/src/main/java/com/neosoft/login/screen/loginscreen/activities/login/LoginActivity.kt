@@ -1,17 +1,15 @@
 package com.neosoft.login.screen.loginscreen.activities.login
 
+import android.content.Intent
 import android.os.Bundle
-import android.util.EventLogTags
-import android.util.Log
 import com.neosoft.login.screen.loginscreen.R
 import com.neosoft.login.screen.loginscreen.activities.base.BaseActivity
 import com.neosoft.login.screen.loginscreen.databinding.ActivityLoginBinding
 import com.neosoft.login.screen.loginscreen.responses.LoginResponse
 import com.neosoft.login.screen.loginscreen.responses.UserData
+import com.neosoft.login.screen.loginscreen.services.BadgeIntentService
 import com.neosoft.login.screen.loginscreen.utils.Navigator
 import com.neosoft.login.screen.loginscreen.utils.Utils
-import java.text.SimpleDateFormat
-import java.util.*
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>(), LoginContract.View {
 
@@ -50,7 +48,9 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(), LoginContract.View {
         presenter.attachView(this)
         binding.model = LoginBindingModel()
         binding.activity = this
-
+        var intent = Intent(this,BadgeIntentService::class.java)
+        intent.putExtra("badgeCount",2)
+        startService(intent)
     }
 
     override fun initViews() {
@@ -70,15 +70,19 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(), LoginContract.View {
     }
 
     fun onLoginClicked(){
-        Navigator.getInstance().navigateToHome(this)
-        /*email = binding.etEmail.text.toString().trim()
+        email = binding.etEmail.text.toString().trim()
         pass = binding.etPassword.text.toString().trim()
         if (Utils.getInstance().isInternetConnected(this)) {
             presenter.doLogin(email, pass)
-            presenter.getCalendarList()
         } else {
             showMessage("No Internet Connection Available")
-        }*/
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        val intent = Intent(this, BadgeIntentService::class.java)
+        stopService(intent)
     }
 
 }

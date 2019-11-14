@@ -2,14 +2,11 @@ package com.neosoft.login.screen.loginscreen.utils
 
 import android.content.Context
 import android.content.Intent
-import android.support.v4.content.ContextCompat.startActivity
-import com.neosoft.login.screen.loginscreen.activities.AddTaskActivity
-import com.neosoft.login.screen.loginscreen.activities.BarcodeActivity
-import com.neosoft.login.screen.loginscreen.activities.CustomerSearchActivity
-import com.neosoft.login.screen.loginscreen.activities.ReviewerModelActivity
 import com.neosoft.login.screen.loginscreen.activities.home.HomeActivity
 import com.neosoft.login.screen.loginscreen.responses.UserData
 
+//Use object Navigator instead
+//object in kotlin work same as singleton in java
 class Navigator private constructor(){
 
     //Using Navigator as Singleton
@@ -30,15 +27,5 @@ class Navigator private constructor(){
         context.startActivity(intent)
 
     }
-
-    fun navigateToHome(context: Context){
-        intent = Intent(context,ReviewerModelActivity::class.java)
-        context.startActivity(intent)
-
-    }
-
-
-
-
 
 }

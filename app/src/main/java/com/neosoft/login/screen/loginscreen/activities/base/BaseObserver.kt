@@ -3,8 +3,9 @@ package com.neosoft.login.screen.loginscreen.activities.base
 import io.reactivex.Observer
 import io.reactivex.disposables.Disposable
 import org.greenrobot.eventbus.EventBus
+import java.util.*
 
-abstract class BaseObserver<T>:Observer<T>{
+abstract class BaseObserver<T>: Observer<T> {
 
     override fun onComplete() {
     }
@@ -16,5 +17,6 @@ abstract class BaseObserver<T>:Observer<T>{
         e.printStackTrace()
         EventBus.getDefault().post(e)
     }
+
 
 }

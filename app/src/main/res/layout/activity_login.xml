@@ -38,6 +38,7 @@
             android:textSize="60sp"
             android:textColor="@color/colorIndigo"
             android:gravity="center"
+            android:fontFamily="@font/lato_bold"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"

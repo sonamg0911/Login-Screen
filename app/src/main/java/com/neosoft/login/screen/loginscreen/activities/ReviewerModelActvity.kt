@@ -50,7 +50,7 @@ class ReviewerModelActivity:BaseActivity<ActivityReviewerModelBinding>(),TabLayo
     }
 
     private fun modifyToolbar() {
-        toolbarTitle.text = "Customer Search"
+        toolbarTitle.text = "Reviewer Model"
     }
 
     override fun intentData() {
